@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Internet Trash Can</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="decomp.js"></script>
+		<script src="matter.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<canvas id="screen" width="800" height="600"></canvas>
+		<br />
+		<input id="filePick" type="file" multiple />
+		<br />
+		<input id="fileShapeRect" type="radio" name="shape" value="rectangle" checked />
+		<label for="fileShapeRect">Rectangular</label>
+		
+		<input id="fileShapeCirc" type="radio" name="shape" value="circle" />
+		<label for="fileShapeRect">Circular</label>
+		<br />
+		<label for="fileSize">Times smaller than screen:</label>
+		<input id="fileSize" type="number" value="3" min="1" max="25" />
+		<br />
+		<label for="fileSize">Round hitbox this much:</label>
+		<input id="fileRound" type="number" value="0" min="0" max="100" />
+		<button id="fileShow">Add Image(s)</button>
+		<button id="fileReset">Reset</button>
+		<button id="fileTrashcan">🗑</button>
+		<br />
+		<p>Made by V360, using Matter.js</p>
+	</body>
+</html>

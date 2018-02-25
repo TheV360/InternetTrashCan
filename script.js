@@ -92,13 +92,13 @@ function addTrashcan() {
 		var trashcan = Vertices.create(
 			[
 				{x: 0, y: 0},
-				{x: size[0] * .10, y: 0},
-				{x: size[0] * .12, y: size[1] * .9},
-				{x: size[0] * .88, y: size[1] * .9},
-				{x: size[0] * .90, y: 0},
+				{x: Math.floor(size[0] * .10), y: 0},
+				{x: Math.floor(size[0] * .12), y: Math.floor(size[1] * .90)},
+				{x: Math.floor(size[0] * .88), y: Math.floor(size[1] * .90)},
+				{x: Math.floor(size[0] * .90), y: 0},
 				{x: size[0], y: 0},
-				{x: size[0] * .98, y: size[1]},
-				{x: size[0] * .02, y: size[1]}
+				{x: Math.floor(size[0] * .98), y: size[1]},
+				{x: Math.floor(size[0] * .02), y: size[1]}
 			]
 		);
 		

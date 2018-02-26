@@ -214,7 +214,10 @@ function imageCirc(image, thisImage) {
 	if ($("#fileSizeRandom")[0].checked)
 		small = 4 + Math.floor(Math.random() * 6);
 	
-	size = correctSize();
+	thisImage.width = image.width;
+	thisImage.height = image.height;
+	
+	size = correctSize(thisImage.width, thisImage.height, small);
 	size = Math.floor((size[0] + size[1]) / 2);
 	thisImage.src = scaleImage(image, size, size);
 	

@@ -5,5 +5,5 @@ put it in the trash
 * uses matter.js and decomp.js
 
 # known issues
-* Trashcan sprite doesn't work. :(
+* Trashcan sprite works, freaks the heck out.
 * circle doesn't exist

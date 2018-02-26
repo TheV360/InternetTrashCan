@@ -105,7 +105,7 @@ function addTrashcan() {
 		// the geometry of the trashcan
 		trashcan = Bodies.fromVertices(80, 200, trashcan, {
 			render: {
-				visible: false
+				visible: true//false
 			},
 			mass: Math.floor((size[0] * size[1]) / (size[0] + size[1]))
 		});
@@ -132,8 +132,8 @@ function addTrashcan() {
 		});
 		var trashbox = Composite.create();
 		trashbox = Composite.add(trashbox, trashcan);
-		trashbox = Composite.add(trashbox, trashcant);
-		trashbox = Composite.add(trashbox, trashcould);
+		//trashbox = Composite.add(trashbox, trashcant);
+		//trashbox = Composite.add(trashbox, trashcould);
 		
 		World.add(engine.world, trashbox);
 	});

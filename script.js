@@ -44,6 +44,8 @@ $(function() {
 	
 	// run the renderer
 	Events.on(Render, "beforeRender", function() {
+		console.log("hey");
+		
 		var allBodies = Composite.allBodies(engine.world);
 		
 		// is it out of bounds? remove it.

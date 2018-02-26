@@ -222,7 +222,7 @@ function imageCirc(image, thisImage) {
 		Bodies.circle(
 			Math.random() * render.options.width,
 			Math.random() * 200,
-			size[0],
+			Math.floor(size / 2),
 			{
 				render: {
 					sprite: {

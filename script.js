@@ -55,7 +55,7 @@ $(function() {
 		}
 		
 		if ($("#fileSizeRandom")[0].checked)
-			$("#fileSize")[0].value = 4 + Math.floor(Math.random() * 6);
+			$("#fileSize")[0].value = "" + (4 + Math.floor(Math.random() * 6));
 	});
 	Render.run(render);
 });

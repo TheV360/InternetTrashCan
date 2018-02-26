@@ -151,7 +151,10 @@ function addImage(file, i) {
 		var image = new Image();
 		// inception sound
 		// after getting the image from the data
-		image.addEventListener("load", function() { imageRect(image, thisImage); });
+		image.addEventListener("load", function() {
+			if ($("#fileShapeRect")[0].checked) imageRect(image, thisImage);
+			if ($("#fileShapeCirc")[0].checked) imageCirc(image, thisImage);
+		});
 		image.src = thisImage.src;
 	});
 	reader.readAsDataURL(file);
@@ -161,13 +164,19 @@ function addImageFromData(data) {
 	var thisImage = {src: data, width: 0, height: 0};
 	
 	var image = new Image();
-	image.addEventListener("load", function() { imageRect(image, thisImage); });
+	image.addEventListener("load", function() {
+		if ($("#fileShapeRect")[0].checked) imageRect(image, thisImage);
+		if ($("#fileShapeCirc")[0].checked) imageCirc(image, thisImage);
+	});
 	image.src = thisImage.src;
 }
 
 function imageRect(image, thisImage) {
 	var size;
 	var small = $("#fileSize")[0].value;
+	
+	if ($("#fileSizeRandom")[0].checked)
+		small = 4 + Math.floor(Math.random() * 6);
 	
 	thisImage.width = image.width;
 	thisImage.height = image.height;
@@ -199,7 +208,31 @@ function imageRect(image, thisImage) {
 }
 
 function imageCirc(image, thisImage) {
+	var size;
+	var small = $("#fileSize")[0].value;
 	
+	if ($("#fileSizeRandom")[0].checked)
+		small = 4 + Math.floor(Math.random() * 6);
+	
+	size = correctSize();
+	size = Math.floor((size[0] + size[1]) / 2);
+	thisImage.src = scaleImage(image, size, size);
+	
+	World.add(engine.world,
+		Bodies.circle(
+			Math.random() * render.options.width,
+			Math.random() * 200,
+			size[0],
+			{
+				render: {
+					sprite: {
+						texture: thisImage.src
+					}
+				},
+				mass: Math.floor((size * size) / (size * 2))
+			}
+		)
+	);
 }
 
 function correctSize(width, height, small) {

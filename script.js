@@ -111,7 +111,7 @@ function addTrashcan() {
 			render: {
 				visible: true//false
 			},
-			mass: Math.floor((size[0] * size[1]) / (size[0] + size[1]))
+			mass: Math.floor((size[0] * size[1]) / (size[0] + size[1])) * 4
 		});
 		
 		// the graphics of the trashcan

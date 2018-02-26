@@ -50,6 +50,7 @@ $(function() {
 		for (i = 0; i < allBodies.length; i++) { // was going to find out width and height, too difficult.
 			if (allBodies[i].position.x < -1000 || allBodies[i].position.x > 1000 || allBodies[i].position.y > 1000) {
 				Composite.remove(engine.world, allBodies[i]);
+				console.log("body removed!");
 			}
 		}
 	});

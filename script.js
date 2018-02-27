@@ -1,6 +1,6 @@
 var Engine, Render, World, Bodies, engine, render;
 var boxA, boxB, ground;
-var screen, filePicker, fileReader, images, i, debug = False;
+var screen, filePicker, fileReader, images, i, debug = false;
 
 $(function() {
 	screen = $("#screen")[0];

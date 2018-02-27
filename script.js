@@ -1,6 +1,6 @@
 var Engine, Render, World, Bodies, engine, render;
 var boxA, boxB, ground;
-var screen, filePicker, fileReader, images, i;
+var screen, filePicker, fileReader, images, i, debug = False;
 
 $(function() {
 	screen = $("#screen")[0];
@@ -136,8 +136,10 @@ function addTrashcan() {
 		});
 		var trashbox = Composite.create();
 		trashbox = Composite.add(trashbox, trashcan);
-		//trashbox = Composite.add(trashbox, trashcant);
-		//trashbox = Composite.add(trashbox, trashcould);
+		if (debug) {
+			trashbox = Composite.add(trashbox, trashcant);
+			trashbox = Composite.add(trashbox, trashcould);
+		}
 		
 		World.add(engine.world, trashbox);
 	});

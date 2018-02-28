@@ -1,4 +1,5 @@
-var Engine, Render, World, Bodies, engine, render;
+var Composite, Constraint, Engine, Render, World, Body, Bodies, Vertices, Events, Mouse, MouseConstraint;
+var engine, render, mouse;
 var boxA, boxB, ground;
 var screen, filePicker, fileReader, images, i, debug = false;
 
@@ -254,6 +255,8 @@ function correctSize(width, height, small) {
 function scaleImage(image, width, height) {
 	var canvas = document.createElement("canvas");
 	var ctx = canvas.getContext("2d");
+	
+	ctx.imageSmoothingEnabled = false;
 	
 	canvas.width = width;
 	canvas.height = height;
